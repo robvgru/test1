@@ -21,7 +21,7 @@ public class TagController {
 
     @GetMapping
     Set<String> getTagsForAutoComplete(@RequestParam("startWith") String startWith) {
-        Set<Tag> first5ByNameLike = tagRepository.findAllByNameStartingWith(startWith);
+        Set<Tag> first5ByNameLike = tagRepository.findFirst5ByNameStartingWith(startWith);
         return first5ByNameLike.stream().map(Tag::getName).collect(Collectors.toSet());
     }
 }

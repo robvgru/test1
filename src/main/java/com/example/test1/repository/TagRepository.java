@@ -11,5 +11,5 @@ public interface TagRepository extends JpaRepository<Tag, String> {
      * @param startWith search substring
      * @return set of tags
      */
-    Set<Tag> findAllByNameStartingWith(String startWith);
+    Set<Tag> findFirst5ByNameStartingWith(String startWith);
 }
